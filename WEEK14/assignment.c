@@ -109,8 +109,7 @@ int main()
 				printf("Invalid input, please try again\n");
 				continue;
 			}
-
-		}
+        }
 	}
 	return 0;
 }
