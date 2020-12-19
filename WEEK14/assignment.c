@@ -111,5 +111,6 @@ int main()
 			}
         }
 	}
+    free(head);
 	return 0;
 }
