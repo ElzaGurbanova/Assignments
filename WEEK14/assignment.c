@@ -68,6 +68,18 @@ void swapNodes(struct Node** head, int swap_data){
     printList(*head);
 }
 
+bool search(struct Node* head, int x) 
+{ 
+    struct Node* current = head;  // Initialize current 
+    while (current != NULL) 
+    { 
+        if (current->data == x) 
+            return true; 
+        current = current->next; 
+    } 
+    return false; 
+} 
+
 int main()
 {
 	struct Node* head = (struct Node*)malloc(sizeof(struct Node));
@@ -90,7 +102,15 @@ int main()
 	while(!quit){
 		scanf("%s", input);
 		if (strcmp(input, "DONE") == 0) quit = 1;
-		else swapNodes(&head, atoi(input));
+		else {
+			if(search(head, atoi(input)))
+				swapNodes(&head, atoi(input));
+			else{
+				printf("Invalid input, please try again\n");
+				continue;
+			}
+
+		}
 	}
 	return 0;
 }
